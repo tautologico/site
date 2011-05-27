@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+<!-- Script para obter os ultimos posts do blog -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAs86ba0xEsLdaoEw2sF4UAxQGpX_EwZ1ldskZrgIxWfc8bHnBthSUQ8Y7otqkA-LiB5CSA7q4I2qDYw"></script>
+<script type="text/javascript">
+
+google.load("feeds", "1");
+
+function initialize() {
+  var feed = new google.feeds.Feed("http://andreiformiga.com/blog/?feed=rss2");
+  feed.setNumEntries(5);
+  feed.load(function(result) {
+    if (!result.error) {
+      var container = document.getElementById("feed");
+      for (var i = 0; i < result.feed.entries.length; i++) {
+        var entry = result.feed.entries[i];
+        var li = document.createElement("li");
+        li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
+        container.appendChild(li);
+      }
+    }
+  });
+}
+google.setOnLoadCallback(initialize);
+
+</script>
+
+	<title>Projeto: Linguagens e Modelos Para Programação na GPU</title>
+</head>
+<body>
+  <div id="content">
+    <div id="banner"><span class="hr">andrei</span>formiga</div>
+    <ul id="top">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#">CV</a></li>
+      <li><a href="../pesquisa.html">Pesquisa</a></li>
+      <li><a href="#">Ensino</a></li>
+      <li><a href="http://andreiformiga.com/blog/">Blog</a></li>
+    </ul>
+    
+    <div id="introi">
+    </div>
+    
+    <div id="left">
+
+      <!-- CONTEUDO -->
+      <h1>Linguagens e Modelos para Programação na GPU</h1>
+
+      <h2>Introdução</h2>
+      <p>
+        As placas gráficas dos computadores pessoais atuais surgiram com o 
+        propósito de renderizar gráficos em tempo-real, principalmente para 
+        jogos. Uma placa gráfica inclui um ou mais processadores gráficos 
+        (GPU ou Graphics Processing Unit), que pode realizar algumas operações 
+        muito mais rápido que o processador central de um computador (CPU). 
+      </p>
+
+      <p>
+        Atualmente, as GPUs são programáveis e existe um grande interesse em 
+        usá-las em aplicações gerais, não apenas restritas à geração de gráficos
+        em tempo-real. Uma boa placa gráfica é otimizada para realizar um grande número de 
+        operações com números de ponto-flutuante por segundo, o que as torna 
+        ideais para aplicações de alta demanda computacional em domínios como 
+        processamento multimídia (imagens, vídeo) e ciência computacional 
+        (simulação, resolução de modelos matemáticos). 
+      </p>
+
+      <p>
+        Um problema para o uso das placas gráficas para aplicações gerais é que 
+        o modelo computacional das GPUs é bastante diferente do modelo de máquina 
+        de Von Neumann com o qual os programadores estão acostumados na CPU. 
+        Existem sistemas criados para o propósito de usar as GPUs para 
+        programação geral, como CUDA da nVidia e o OpenCL. Entretanto, esses 
+        sistemas se mantêm ligados a linguagens de programação criadas para 
+        a programação de CPUs: tanto a linguagem CUDA C da nVidia quanto a linguagem 
+        associada ao OpenCL são variantes da linguagem C para acessar GPUs.
+      </p>
+
+      <h2>Objetivos</h2>
+      <p>
+        Os objetivos deste projeto são investigar modelos computacionais de 
+        computação paralela em GPUs, e criar ou sugerir linguagens de 
+        programação, associados a esses modelos, que sejam mais adequadas 
+        para a programação de GPUs. Na definição dos modelos, uma aplicação
+        interessante é identificar quando uma aplicação tem o potencial de 
+        obter grandes ganhos de eficiência se executada na GPU ao invés da 
+        CPU. 
+      </p>
+
+      <p>
+        Os modelos e linguagens desenvolvidos devem ser usados na criação de 
+        aplicações de exemplo que demonstrem a maior facilidade de programação. 
+      </p>
+
+      <h2>Referências</h2>
+      <ul>
+        <li><a href="http://developer.nvidia.com/category/zone/cuda-zone">CUDA Developer Zone</a></li>
+        <li><a href="http://www.khronos.org/opencl/">Página oficial do OpenCL</a></li>
+        <li><a href="http://www.amazon.com/Programming-Massively-Parallel-Processors-Hands/dp/0123814723/ref=tmm_pap_title_0">Programming Massively Parallel Processors</a>, 
+            David B. Kirk, Wen-mei W. Hwu</li>
+        <li><a href="http://www.amazon.com/CUDA-Example-Introduction-General-Purpose-Programming/dp/0131387685/ref=pd_bxgy_b_text_b">CUDA By Example</a>, 
+            Jason Sanders, Edward Kandrot</li>
+      </ul>
+    </div>
+    
+
+    <!-- COLUNA -->
+    <div id="right">
+      <h3>Links</h3>
+      <ul>
+	<li><a href="http://br.linkedin.com/pub/andrei-formiga/5/1aa/770">LinkedIn</a></li>
+	<li><a href="http://twitter.com/andreiformiga">Twitter</a></li>
+	<li><a href="http://github.com/tautologico">github</a></li>
+	<li><a href="http://www.ccae.ufpb.br/dce">DCE UFPB</a></li>
+	<li><a href="http://www.ppgi.di.ufpb.br/">PPGI</a></li>
+	<li><a href="http://lattes.cnpq.br/0506569373440954 ">Currículo Lattes</a></li>
+      </ul>
+      <br /><br />
+      <h3>Posts Recentes (RSS)</h3>
+      <ul id="feed">
+      <!-- FEED GOES HERE -->
+      </ul>
+    </div>
+    <div id="footer">
+      <p></p>
+    </div>
+  </div>
+</body>
+</html>
