@@ -1,0 +1,97 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="css/style.css" type="text/css" />
+
+<!-- Script para obter os ultimos posts do blog -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAs86ba0xEsLdaoEw2sF4UAxQGpX_EwZ1ldskZrgIxWfc8bHnBthSUQ8Y7otqkA-LiB5CSA7q4I2qDYw"></script>
+<script type="text/javascript">
+
+google.load("feeds", "1");
+
+function initialize() {
+  var feed = new google.feeds.Feed("http://andreiformiga.com/blog/?feed=rss2");
+  feed.setNumEntries(5);
+  feed.load(function(result) {
+    if (!result.error) {
+      var container = document.getElementById("feed");
+      for (var i = 0; i < result.feed.entries.length; i++) {
+        var entry = result.feed.entries[i];
+        var li = document.createElement("li");
+        li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
+        container.appendChild(li);
+      }
+    }
+  });
+}
+google.setOnLoadCallback(initialize);
+
+</script>
+
+	<title>Andrei Formiga - Pesquisa</title>
+</head>
+<body>
+  <div id="content">
+    <div id="banner"><span class="hr">andrei</span>formiga</div>
+    <ul id="top">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">CV</a></li>
+      <li><a class="current" href="pesquisa.html">Pesquisa</a></li>
+      <li><a href="#">Ensino</a></li>
+      <li><a href="http://andreiformiga.com/blog/">Blog</a></li>
+    </ul>
+    
+    <div id="introi">
+    </div>
+    
+    <div id="left">
+
+      <!-- CONTEUDO -->
+      <h1>Pesquisa</h1>
+
+      <h2>Interesses</h2>
+      <p>
+        <ul>
+          <li>Linguagens de Programação</li>
+          <li>Computação Concorrente e Paralela</li>
+          <li>Inteligência Artificial e Aprendizagem de Máquina</li>
+        </ul>
+      </p>
+
+      <h2>Projetos</h2>
+      <p>
+        <ul>
+          <li>Bla</li>
+          <li>Blo</li>
+        </ul>
+      </p>
+      <br />
+
+    </div>
+    
+
+    <!-- COLUNA -->
+    <div id="right">
+      <h3>Links</h3>
+      <ul>
+	<li><a href="http://br.linkedin.com/pub/andrei-formiga/5/1aa/770">LinkedIn</a></li>
+	<li><a href="http://twitter.com/andreiformiga">Twitter</a></li>
+	<li><a href="http://github.com/tautologico">github</a></li>
+	<li><a href="http://www.ccae.ufpb.br/dce">DCE UFPB</a></li>
+	<li><a href="http://www.ppgi.di.ufpb.br/">PPGI</a></li>
+	<li><a href="http://lattes.cnpq.br/0506569373440954 ">Currículo Lattes</a></li>
+      </ul>
+      <br /><br />
+      <h3>Posts Recentes (RSS)</h3>
+      <ul id="feed">
+        
+      </ul>
+    </div>
+    <!-- <div id="footer"> -->
+    <!--   <p>Design: Luka Cvrk, <a title="Awsome Web Templates" href="http://www.solucija.com/">Solucija</a></p> -->
+    <!-- </div> -->
+  </div>
+</body>
+</html>
