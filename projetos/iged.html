@@ -1,0 +1,136 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<link rel="stylesheet" href="../css/style.css" type="text/css" />
+
+<!-- Script para obter os ultimos posts do blog -->
+<script type="text/javascript" src="http://www.google.com/jsapi?key=ABQIAAAAs86ba0xEsLdaoEw2sF4UAxQGpX_EwZ1ldskZrgIxWfc8bHnBthSUQ8Y7otqkA-LiB5CSA7q4I2qDYw"></script>
+<script type="text/javascript">
+
+google.load("feeds", "1");
+
+function initialize() {
+  var feed = new google.feeds.Feed("http://andreiformiga.com/blog/?feed=rss2");
+  feed.setNumEntries(5);
+  feed.load(function(result) {
+    if (!result.error) {
+      var container = document.getElementById("feed");
+      for (var i = 0; i < result.feed.entries.length; i++) {
+        var entry = result.feed.entries[i];
+        var li = document.createElement("li");
+        li.innerHTML = '<a href="' + entry.link + '">' + entry.title + '</a>';
+        container.appendChild(li);
+      }
+    }
+  });
+}
+google.setOnLoadCallback(initialize);
+
+</script>
+
+	<title>Projeto: IGED - Interpretador Gráfico de Estruturas de Dados</title>
+</head>
+<body>
+  <div id="content">
+    <div id="banner"><span class="hr">andrei</span>formiga</div>
+    <ul id="top">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="#">CV</a></li>
+      <li><a href="../pesquisa.html">Pesquisa</a></li>
+      <li><a href="#">Ensino</a></li>
+      <li><a href="http://andreiformiga.com/blog/">Blog</a></li>
+    </ul>
+    
+    <div id="introi">
+    </div>
+    
+    <div id="left">
+
+      <!-- CONTEUDO -->
+      <h1>IGED &ndash; Interpretador Gráfico de Estruturas de Dados</h1>
+
+      <h2>Introdução</h2>
+      <p>
+        No ensino das Estruturas de Dados e seus algoritmos, um dos
+      problemas enfrentados &eacute; o grau de abstração necessário
+      para entender as operações com as estruturas na memória. Livros
+      didáticos e outros materiais educacionais sobre o assunto
+      frequentemente usam figuras para ilustrar as estruturas de dados
+      e sua organização, tornando a discussão mais concreta para os
+      alunos. Nos livros, essas figuras são estáticas, apresentando
+      apenas alguns momentos selecionados na execução dos algoritmos
+      que manipulam as estruturas. Existem ferramentas computacionais
+      que mostram animações das estruturas, mas essas animações são
+      normalmente fixas e preparadas com antecedência pelo professor. 
+      </p>
+
+      <p>
+      O IGED &ndash; Interpretador Gráfico de Estruturas de Dados
+      &ndash; &eacute; uma proposta de ambiente de programação
+      interativo para o ensino de Estruturas de Dados. Neste ambiente
+      o aluno poderá escrever programas para manipular estruturas de
+      dados e visualizar, com animações, o efeito da execução do
+      programa na estrutura de dados utilizada, ajudando na apreensão
+      dos conceitos. O professor poderá criar animações facilmente
+      (apenas escrevendo os programas necessários) e tamb&eacute;m
+      poderá definir exercícios de programação que deverão ser resolvidos pelos
+      alunos. O ambiente IGED corrigirá automaticamente o resultado
+      dos exercícios de programação, comparando a estrutura de dados
+      obtida pelo programa do aluno com a estrutura desejada
+      (determinada pelo professor). 
+      </p>
+
+      <h2>Estado Atual e Objetivos</h2>
+      <p>
+      Estruturalmente, o IGED inclui um tradutor (compilador), uma
+      máquina virtual, uma interface gráfica (que deve conter editor
+      de programas, janela de visualização das estruturas e vários
+      controles) e os componentes internos relacionados com a
+      avaliação de exercícios. 
+      </p>
+
+      <p>
+      Atualmente, o projeto conta com alunos de graduação trabalhando
+      no desenvolvimento dos vários componentes. Para um trabalho de
+      mestrado, al&eacute;m do desenvolvimento da ferramenta, deve
+      haver um enfoque de pesquisa na descrição do que há de inovador
+      na abordagem, e na validação da ideia, al&eacute;m das
+      possibilidades educacionais do IGED para o ensino da
+      computação. 
+      </p>
+
+      <h2>Referências</h2>
+      <ul>
+        <li><a href="IGED_2011-wei.pdf">Um Interpretador Gráfico e Avaliador Gráfico para o Ensino
+        de Estruturas de Dados</a> &ndash; Gilberto Farias, Andrei Formiga,
+        Alisson Brito, Tiago Neves, Dorgival Netto e Thiago Oliveira
+        &ndash; Aceito para o WEI 2011. </li>
+      </ul>
+    </div>
+    
+
+    <!-- COLUNA -->
+    <div id="right">
+      <h3>Links</h3>
+      <ul>
+	<li><a href="http://br.linkedin.com/pub/andrei-formiga/5/1aa/770">LinkedIn</a></li>
+	<li><a href="http://twitter.com/andreiformiga">Twitter</a></li>
+	<li><a href="http://github.com/tautologico">github</a></li>
+	<li><a href="http://www.ccae.ufpb.br/dce">DCE UFPB</a></li>
+	<li><a href="http://www.ppgi.di.ufpb.br/">PPGI</a></li>
+	<li><a href="http://lattes.cnpq.br/0506569373440954 ">Currículo Lattes</a></li>
+      </ul>
+      <br /><br />
+      <h3>Posts Recentes (RSS)</h3>
+      <ul id="feed">
+      <!-- FEED GOES HERE -->
+      </ul>
+    </div>
+    <div id="footer">
+      <p></p>
+    </div>
+  </div>
+</body>
+</html>
